@@ -978,19 +978,6 @@ html {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px 40px;
 }
-/* Make sure sections are visible above any background/canvas */
-.section {
-  position: relative;
-  z-index: 2; /* higher than canvas / hero */
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* General section spacing */
-section {
-  padding: 80px 5%;
-  margin-top: 40px;
-}
 
 
 
