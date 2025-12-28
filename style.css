@@ -73,15 +73,14 @@ nav a:hover {
 </section>
 
 .hero {
-  min-height: 100vh;     /* FULL screen height */
+  min-height: calc(100vh - 70px); /* navbar safe */
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  overflow: visible;    /* IMPORTANT */
-  padding-top: 80px;    /* navbar space */
+  align-items: center;
+  overflow: visible;
 }
+
 
 
 .hero-content {
@@ -921,6 +920,15 @@ px;
     transform: translateY(0);
   }
 }
+canvas,
+.three-container {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
 
 
 
