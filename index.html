@@ -41,8 +41,6 @@
 </head>
 <body>
 
-<div id="preloader">Loading Excellence</div>
-
 <header class="nav">
   <div class="nav-logo">DP</div>
 
@@ -211,8 +209,15 @@
   </section>
 
 </body>
+<script>
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  if (loader) {
+    loader.style.display = "none";
+  }
+});
+</script>
 
-</body>
 
 <div id="chat-toggle">AI</div>
 
