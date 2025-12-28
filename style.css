@@ -58,6 +58,12 @@ nav a:hover {
 /* HERO */
 <section class="hero">
   <canvas id="heroCanvas"></canvas>
+.hero-logo {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 20px;
+}
+
 
   <div class="hero-content" id="heroText">
     <h2>Daham Prabhasara</h2>
@@ -67,14 +73,16 @@ nav a:hover {
 </section>
 
 .hero {
-  position: relative;
-  height: 100vh;
+  min-height: 100vh;     /* FULL screen height */
   display: flex;
-  align-items: center;      /* vertical center */
-  justify-content: center;  /* horizontal center */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background: #0b0b0c;
+  overflow: visible;    /* IMPORTANT */
+  padding-top: 80px;    /* navbar space */
 }
+
 
 .hero-content {
   display: flex;
@@ -83,6 +91,14 @@ nav a:hover {
   justify-content: center;
   z-index: 2;
 }
+.hero h1 {
+  font-size: clamp(42px, 6vw, 80px);
+  line-height: 1.2;
+  margin: 20px 0;
+  padding: 0;
+  overflow: visible;
+}
+
 .hero-content h2 {
   font-family: 'Cinzel', serif;
   font-size: 64px;
@@ -890,6 +906,20 @@ px;
 }
 .nav-search::placeholder {
   color: rgba(255,255,255,0.45);
+}
+.hero * {
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
