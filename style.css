@@ -73,13 +73,11 @@ nav a:hover {
 </section>
 
 .hero {
-  min-height: calc(100vh - 70px); /* navbar safe */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  min-height: calc(100vh - 70px); /* leave space under navbar */
   overflow: visible;
 }
+
 
 
 
@@ -112,10 +110,9 @@ nav a:hover {
 #heroCanvas {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0; /* behind everything */
   pointer-events: none;
 }
-
 
 .hero h2 {
   font-family: 'Cinzel', serif;
@@ -142,6 +139,7 @@ nav a:hover {
 }
 
 /* SECTIONS */
+
 .section {
   padding: 120px 10%;
   text-align: center;
@@ -157,6 +155,7 @@ nav a:hover {
 .section.dark {
   background: #111;
 }
+
 
 /* SKILLS */
 .skills {
@@ -949,6 +948,49 @@ canvas {
 }
 position: fixed;
 height: 120vh;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* match navbar height */
+}
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px 40px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* match navbar height */
+}
+.hero {
+  position: relative;
+  min-height: calc(100vh - 70px); /* leave space under navbar */
+  overflow: visible;
+}
+#heroCanvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0; /* behind everything */
+  pointer-events: none;
+}
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px 40px;
+}
+/* Make sure sections are visible above any background/canvas */
+.section {
+  position: relative;
+  z-index: 2; /* higher than canvas / hero */
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* General section spacing */
+section {
+  padding: 80px 5%;
+  margin-top: 40px;
+}
 
 
 
